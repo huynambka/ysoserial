@@ -65,7 +65,7 @@ public interface ObjectPayload <T> {
 
             final Object payloadObject;
             try {
-                final ObjectPayload payload = payloadClass.newInstance();
+                final ObjectPayload payload = payloadClass.getDeclaredConstructor().newInstance();
                 payloadObject = payload.getObject(payloadArg);
             }
             catch ( Exception e ) {
@@ -91,7 +91,7 @@ public interface ObjectPayload <T> {
             }
 
             try {
-                final ObjectPayload payload = payloadClass.newInstance();
+                final ObjectPayload payload = payloadClass.getDeclaredConstructor().newInstance();
                 releasePayload(payload, payloadObject);
             }
             catch ( Exception e ) {

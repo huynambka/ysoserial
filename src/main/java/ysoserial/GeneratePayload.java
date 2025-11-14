@@ -30,7 +30,7 @@ public class GeneratePayload {
 		}
 
 		try {
-			final ObjectPayload payload = payloadClass.newInstance();
+			final ObjectPayload payload = payloadClass.getDeclaredConstructor().newInstance();
 			final Object object = payload.getObject(command);
 			PrintStream out = System.out;
 			Serializer.serialize(object, out);

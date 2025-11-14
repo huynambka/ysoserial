@@ -24,7 +24,7 @@ public class PayloadRunner {
 
 				System.out.println("generating payload object(s) for command: '" + command + "'");
 
-				ObjectPayload<?> payload = clazz.newInstance();
+				ObjectPayload<?> payload = clazz.getDeclaredConstructor().newInstance();
                 final Object objBefore = payload.getObject(command);
 
 				System.out.println("serializing payload");
