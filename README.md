@@ -1,3 +1,10 @@
+# Update
+
+## Usage
+
+```shell
+java --add-opens=java.base/java.net=ALL-UNNAMED -jar target/ysoserial-1.0-all.jar Payload command
+```
 
 # ysoserial
 
